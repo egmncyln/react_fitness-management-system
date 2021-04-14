@@ -1,5 +1,5 @@
 import React, { MouseEvent } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import styles from './Login.module.scss';
 
 function Login() {
@@ -19,19 +19,20 @@ function Login() {
      </label>
      <input type="text" className="form-control" id="username" />
     </div>
-    <div className="mb-3">
+    <div className="mb-4">
      <label htmlFor="password" className="form-label">
       Password
      </label>
      <input type="password" className="form-control" id="password" />
     </div>
-    <div className="mb-3">
-     <button
-      className="btn btn-primary w-100"
-      onClick={(e: MouseEvent) => onLoginClicked(e)}>
-      Login
-     </button>
-    </div>
+    <button
+     className="btn btn-primary w-100 mb-3"
+     onClick={(e: MouseEvent) => onLoginClicked(e)}>
+     Login
+    </button>
+    <label className="d-block text-center">
+     Don't have an account? <Link to="/signup">Sign up</Link>
+    </label>
    </form>
   </div>
  );

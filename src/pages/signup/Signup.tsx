@@ -1,5 +1,8 @@
 import React, { MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../../components/button/Button';
+import Label from '../../components/display/Label';
+import InputWithLabel from '../../components/input/InputWithLabel';
 import styles from './Signup.module.scss';
 
 function Signup() {
@@ -10,37 +13,25 @@ function Signup() {
   <div className="d-flex justify-content-center align-items-center w-100 h-100">
    <form className="border rounded w-50 p-5">
     <div className="mb-3">
-     <label htmlFor="name" className="form-label">
-      Name
-     </label>
-     <input type="text" className="form-control" id="name" />
+     <InputWithLabel htmlFor="name" labelText="Name" />
     </div>
     <div className="mb-3">
-     <label htmlFor="surname" className="form-label">
-      Surname
-     </label>
-     <input type="text" className="form-control" id="surname" />
+     <InputWithLabel htmlFor="surname" labelText="Surname" />
     </div>
     <div className="mb-3">
-     <label htmlFor="username" className="form-label">
-      Username
-     </label>
-     <input type="text" className="form-control" id="username" />
+     <InputWithLabel htmlFor="username" labelText="Username" />
     </div>
     <div className="mb-4">
-     <label htmlFor="password" className="form-label">
-      Password
-     </label>
-     <input type="password" className="form-control" id="password" />
+     <InputWithLabel htmlFor="password" labelText="Password" type="password" />
     </div>
-    <button
+    <Button
      className="btn btn-primary w-100 mb-3"
      onClick={(e: MouseEvent) => onSignupClicked(e)}>
      Sign Up
-    </button>
-    <label className="d-block text-center">
+    </Button>
+    <Label className="d-block text-center">
      Have an account? <Link to="/">Login</Link>
-    </label>
+    </Label>
    </form>
   </div>
  );

@@ -1,19 +1,15 @@
 import React from 'react';
 import './App.css';
-import Login from './pages/login/Login';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
-import Signup from './pages/signup/Signup';
+import Auth from './pages/auth/page/Auth';
 
 function App() {
  return (
   <BrowserRouter>
    <Switch>
     <Route exact path="/">
-     <Login />
-    </Route>
-    <Route path="/signup">
-     <Signup />
+     <Auth />
     </Route>
     <Route path="/home">
      <Home />

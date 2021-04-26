@@ -3,6 +3,8 @@ import Button from '../../../components/button/Button';
 import Label from '../../../components/display/Label';
 import InputWithLabel from '../../../components/input/InputWithLabel';
 import { PageTypes } from '../enums/page-types.enum';
+import styles from './Auth.module.scss';
+import className from 'classnames';
 
 function Auth() {
  let [pageType, setPageType] = useState(PageTypes.Login);
@@ -14,7 +16,7 @@ function Auth() {
  return (
   <div className="d-flex justify-content-center align-items-center w-100 h-100">
    <form
-    className="border rounded w-50 p-5"
+    className={className(styles.form, 'border rounded w-50 p-5')}
     onSubmit={(e: FormEvent) => onSubmit(e)}>
     {pageType === PageTypes.Signup && (
      <Fragment>

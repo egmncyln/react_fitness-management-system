@@ -5,35 +5,41 @@ import InputWithLabel from '../../../components/input/InputWithLabel';
 import { PageTypes } from '../enums/page-types.enum';
 import styles from './Auth.module.scss';
 import className from 'classnames';
+import { useHistory } from 'react-router';
+import Form from '../../../components/display/Form';
+import Div from '../../../components/display/Div';
+import A from '../../../components/display/A';
 
 function Auth() {
  let [pageType, setPageType] = useState(PageTypes.Login);
+ const history = useHistory();
 
  const onSubmit = (e: FormEvent) => {
   e.preventDefault();
+  history.push('home');
  };
 
  return (
-  <div className="d-flex justify-content-center align-items-center w-100 h-100">
-   <form
+  <Div className="d-flex justify-content-center align-items-center w-100 h-100">
+   <Form
     className={className(styles.form, 'border rounded w-50 p-5')}
     onSubmit={(e: FormEvent) => onSubmit(e)}>
     {pageType === PageTypes.Signup && (
      <Fragment>
-      <div className="mb-3">
+      <Div className="mb-3">
        <InputWithLabel htmlFor="name" labelText="Name" />
-      </div>
-      <div className="mb-3">
+      </Div>
+      <Div className="mb-3">
        <InputWithLabel htmlFor="surname" labelText="Surname" />
-      </div>
+      </Div>
      </Fragment>
     )}
-    <div className="mb-3">
+    <Div className="mb-3">
      <InputWithLabel htmlFor="username" labelText="Username" />
-    </div>
-    <div className="mb-4">
+    </Div>
+    <Div className="mb-4">
      <InputWithLabel htmlFor="password" labelText="Password" type="password" />
-    </div>
+    </Div>
     <Button className="btn btn-primary w-100 mb-3">
      {pageType === PageTypes.Login ? 'Login' : 'Sign Up'}
     </Button>
@@ -41,31 +47,31 @@ function Auth() {
      {pageType === PageTypes.Login ? (
       <Fragment>
        Don't have an account?{' '}
-       <a
+       <A
         href="#"
         onClick={(e: MouseEvent) => {
          e.preventDefault();
          setPageType(PageTypes.Signup);
         }}>
         Signup
-       </a>
+       </A>
       </Fragment>
      ) : (
       <Fragment>
        Have an account?{' '}
-       <a
+       <A
         href="#"
         onClick={(e: MouseEvent) => {
          e.preventDefault();
          setPageType(PageTypes.Login);
         }}>
         Login
-       </a>
+       </A>
       </Fragment>
      )}
     </Label>
-   </form>
-  </div>
+   </Form>
+  </Div>
  );
 }
 

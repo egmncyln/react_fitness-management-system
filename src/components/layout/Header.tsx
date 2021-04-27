@@ -1,8 +1,7 @@
-import React, { Fragment } from 'react';
-import Div from '../display/Div';
+import React from 'react';
 
 function Header(props: any) {
- return <Div {...props}>Header</Div>;
+ return <header {...props}>Header</header>;
 }
 
 export default Header;

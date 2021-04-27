@@ -1,8 +1,7 @@
-import React, { Fragment } from 'react';
-import Div from '../display/Div';
+import React from 'react';
 
 function Footer(props: any) {
- return <Div {...props}>Footer</Div>;
+ return <footer {...props}>Footer</footer>;
 }
 
 export default Footer;

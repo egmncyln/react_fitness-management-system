@@ -4,7 +4,7 @@ import Label from '../../../components/display/Label';
 import InputWithLabel from '../../../components/input/InputWithLabel';
 import { PageTypes } from '../enums/page-types.enum';
 import styles from './Auth.module.scss';
-import className from 'classnames';
+import cn from 'classnames';
 import { useHistory } from 'react-router';
 import Form from '../../../components/display/Form';
 import Div from '../../../components/display/Div';
@@ -22,7 +22,7 @@ function Auth() {
  return (
   <Div className="d-flex justify-content-center align-items-center w-100 h-100">
    <Form
-    className={className(styles.form, 'border rounded w-50 p-5')}
+    className={cn(styles.form, 'border rounded w-50 p-5')}
     onSubmit={(e: FormEvent) => onSubmit(e)}>
     {pageType === PageTypes.Signup && (
      <Fragment>
@@ -46,7 +46,7 @@ function Auth() {
     <Label className="d-block text-center">
      {pageType === PageTypes.Login ? (
       <Fragment>
-       Don't have an account?{' '}
+       Don't have an account ?{' '}
        <A
         href="#"
         onClick={(e: MouseEvent) => {
@@ -58,7 +58,7 @@ function Auth() {
       </Fragment>
      ) : (
       <Fragment>
-       Have an account?{' '}
+       Have an account ?{' '}
        <A
         href="#"
         onClick={(e: MouseEvent) => {
